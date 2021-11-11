@@ -1,0 +1,31 @@
+---
+title: "Install package for Ubuntu"
+author: "Jia Nie"
+date: "11/5/2021"
+output: html_document
+---
+
+# install XML
+```{bash}
+sudo apt-get install libxml2
+sudo apt-get install xml2
+sudo apt-get install libxml2-dev
+```
+
+```{r}
+install.packages("XML")
+install.packages("htmltab")
+```
+
+# install Google Chrome
+https://itsubuntu.com/best-internet-browsers-for-ubuntu-20-04-lts/
+```{bash}
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+# Add the repository with the following command in your Ubuntu terminal:
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+# Install Google Chrome in your Ubuntu 20.04 LTS operating system.
+sudo apt update
+
+sudo apt install google-chrome-stable
+```
+

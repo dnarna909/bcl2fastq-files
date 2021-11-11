@@ -1,0 +1,27 @@
+git config --global user.name "dnarna909"
+git config --global user.email "niejia113@gmail.com"
+ssh-keygen -t rsa -C "niejia113@gmail.com" 
+ssh -T git@github.com
+
+Your identification has been saved in /home/jianie/.ssh/id_rsa
+Your public key has been saved in /home/jianie/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:rGtL3abaPOkRTgHRcpdpZK0NBY0ECXsw78RzhECEzlg niejia113@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|     +X=.**O.    |
+|    E .B=oB o    |
+|   =  .oBo.+     |
+|  . o  = +. .    |
+|        S        |
+|       = o       |
+|      o +.o      |
+|     ..+o+       |
+|     .++=.       |
++----[SHA256]-----+
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDVyjcKVcbUxJWTCHAqlDHTRm2EQoCeLL9T3hv4p/suhJ47gz30RQXUOLr5TP114W8QTfmrA6CLVxqEgO5nGo+74xVQjUU9amF0KhzTMYkepoYtEnNIg530FRoDffmbJXtDkij4oBaO4TySq0hdKIvQGBmo9d9Wsm05KurVm6HoDYdzSd3zQOuzBDV4OOoBm43sDlbqtJPCU0wboEyKOMoP1n2AoJmCZvwYoWjsg3cdJdvbti2uI3v9TfJrmsVMy2lXFzsW3DHav06eNhE6MWy/U8IHaGhk/FQjwSObm0GC5hOS5fOEKcBLlrZpZzp1wQJl7r2pcH2OqdErJTLXKoN4MSZfYYGYYZoVJwErrSUPSrDslqPPEWbdzjSPWxioK3ArLlAXNkjDAYksKzi45WoSGvYHpDjPwzz7y+QTshx3Gv7FI59n0uqmyoh4WC7IHlQDFGaCMntiTtkZss/IMT/PkzFcaahmBtXuxQkjT3nfzIKVOuvn3HgfL1nMdKeX1tk= niejia113@gmail.com
+
+The authenticity of host 'github.com (140.82.113.3)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.

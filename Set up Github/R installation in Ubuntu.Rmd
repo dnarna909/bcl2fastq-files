@@ -1,0 +1,76 @@
+---
+title: "Ubuntu Packages For R - Brief Instructions"
+author: "Jia Nie"
+date: "11/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Install R
+Package for the current R 4.1. release* are available for most stable Desktop releases of Ubuntu until their official end of life date. However, only the latest Long Term Support (LTS) release is fully supported. As of May 19, 2021 the supported releases are
+    Hirsute Hippo (21.04, amd64 only)
+    Groovy Gorilla (20.10, amd64 only),
+    Focal Fossa (20.04; LTS and amd64 only), # my system
+    Bionic Beaver (18.04; LTS), and
+    Xenial Xerus (16.04; LTS).
+Run these lines (as root or by prefixing sudo) to tell Ubuntu about the R binaries at CRAN.
+```{sh}
+# as root
+sudo -s # gives the root access, type password
+echo 1234 | sudo -s
+```
+
+```{sh}
+apt-get update # get the updates
+apt-get upgrade # upgrades the system
+# update indices
+apt update -qq
+# install two helper packages we need
+apt install --no-install-recommends software-properties-common dirmngr
+# add the signing key (by Michael Rutter) for these repos
+# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+# Fingerprint: 298A3A825C0D65DFD57CBB651716619E084DAB9
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
+add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+```
+
+Here we use `lsb_release -cs` to access which Ubuntu flavor you run: one of “hirsuite”, “groovy”, “focal”, “bionic”, …
+```{sh}
+lsb_release -cs
+# focal
+```
+
+Then run below to to install R and its dependencies.
+```{bash}
+apt install --no-install-recommends r-base
+```
+
+For more detailed instructions, including details on administration and maintenance of R Packages, see the full README.
+For older R releases, see the corresponding README.
+
+# Get 5000+ CRAN Packages
+Run this command (as root or by prefixing sudo) to add the current R 4.0 or later ‘c2d4u’ repository:
+
+```{bash}
+add-apt-repository ppa:c2d4u.team/c2d4u4.0+
+```
+
+to add the key id for this repository, add the repository, and update the index. You can now do `apt install --no-install-recommends r-cran-rstan` or `apt install --no-install-recommends r-cran-tidyverse` (again as user root or via sudo)
+```{bash}
+apt install --no-install-recommends r-cran-rstan
+```
+
+The ‘c2d4u’ repository is only available for LTS releases. If you wish to attempt to use the repository with an non-LTS release, you can manually edit the ’c2d4u_team-ubuntu-c2d4u4_0_-*.list’ to use focal instead of the intended release. This usage of the ‘c2d4u’ repository is unsupported. An LTS release is strongly suggested for utilizing the ‘c2d4u’ repository.
+
+# Acknowledgements
+The Debian R packages are maintained by Dirk Eddelbuettel. The Ubuntu packages are compiled for i386 and amd64 by Michael Rutter (marutter@gmail.com) using scripts developed by Vincent Goulet.
+
+
+Installing R packages not provided with Ubuntu first requires tools to compile the packages from source. These tools are installed via the R development package with
+
+```{sh}
+apt-get install r-base-dev
+```
