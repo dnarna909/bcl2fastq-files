@@ -1,0 +1,100 @@
+# Setup the Command for bcl2fastq
+## First make a directory in the yard to run the analysis.
+mkdir /home/jianie/yard/bcl2fastq_20210716
+cd /home/jianie/yard/bcl2fastq_20210716
+
+## set up variables
+export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
+bcl2fastq --help
+
+# Dual index: Masternak Samples  
+## First make a directory in the yard to run the analysis.
+mkdir /home/jianie/yard/run_bcl2fastq
+cd /home/jianie/yard/run_bcl2fastq
+
+bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
+--create-fastq-for-index-reads \
+--minimum-trimmed-read-length=10 \
+--mask-short-adapter-reads=10 \
+--ignore-missing-positions \
+--ignore-missing-controls \
+--ignore-missing-filter \
+--ignore-missing-bcls \
+-r 4 -w 4 \
+-R /media/jianie/Seagate_SequencingFiles_2/20210716_UTA_NovaSeq_L1_L2 \
+--interop-dir=/media/jianie/yard/run_bcl2fastq \
+--sample-sheet=/media/jianie/Seagate_SequencingFiles_2/20210716_L1_L2_cellranger/Nie1_SampleSheet_Dual.csv \
+--tiles s_[1] \
+--output-dir=/home/jianie/yard/run_bcl2fastq
+
+# start
+2021-09-17 16:12:53
+2021-09-17 18:06:01
+
+
+# Single index: Lane2 samples and multi-plex samples
+## First make a directory in the yard to run the analysis.
+mkdir /home/jianie/yard/run_bcl2fastq
+cd /home/jianie/yard/run_bcl2fastq
+
+bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
+--create-fastq-for-index-reads \
+--minimum-trimmed-read-length=10 \
+--mask-short-adapter-reads=10 \
+--ignore-missing-positions \
+--ignore-missing-controls \
+--ignore-missing-filter \
+--ignore-missing-bcls \
+-r 4 -w 4 \
+-R /media/jianie/Seagate_SequencingFiles_2/20210716_UTA_NovaSeq_L1_L2 \
+--interop-dir=/media/jianie/yard/run_bcl2fastq \
+--sample-sheet=/media/jianie/Seagate_SequencingFiles_2/All_SampleSheet/bcl2fastq/20210716_Nie2_SampleSheet_Single.csv \
+--output-dir=/home/jianie/yard/run_bcl2fastq
+
+# start
+2021-09-17 16:12:53
+2021-09-17 18:06:01
+
+mkdir /home/jianie/yard/run_bcl2fastq/20210716_L1_fastq_dual_bcl2fastq
+cd /home/jianie/yard/run_bcl2fastq/20210716_L1_fastq_dual_bcl2fastq
+
+bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
+--create-fastq-for-index-reads \
+--minimum-trimmed-read-length=8 \
+--mask-short-adapter-reads=8 \
+--ignore-missing-positions \
+--ignore-missing-controls \
+--ignore-missing-filter \
+--ignore-missing-bcls \
+-r 6 -w 6 \
+-R /media/jianie/Seagate_SequencingFiles_2/20210716_UTA_NovaSeq_L1_L2 \
+--sample-sheet=/media/jianie/Seagate_SequencingFiles_2/All_SampleSheet/bcl2fastq/SampleSheet_Dual_L1_bcl2fastq.csv \
+--interop-dir=/media/jianie/yard/run_bcl2fastq \
+--output-dir=/home/jianie/yard/run_bcl2fastq
+
+
+
+# Dual index: 20210830 Samples  
+mkdir /home/jianie/yard/bcl2fastq
+cd /home/jianie/yard/bcl2fastq
+
+bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
+--create-fastq-for-index-reads \
+--minimum-trimmed-read-length=10 \
+--mask-short-adapter-reads=10 \
+--ignore-missing-positions \
+--ignore-missing-controls \
+--ignore-missing-filter \
+--ignore-missing-bcls \
+-r 7 -w 7 \
+-R /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3 \
+--interop-dir=/media/jianie/yard/bcl2fastq_20210830 \
+--sample-sheet=/media/jianie/Seagate_SequencingFiles_2/All_SampleSheet/20210830_L3_SampleSheet_Dual.csv \
+--tiles s_[3] \
+--output-dir=/home/jianie/yard/bcl2fastq_20210830
+
+
+codes from Zibiao Guo
+bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3 --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/All_SampleSheet/bcl2fastq/20210830_L3_SampleSheet_Dual.csv
+
+

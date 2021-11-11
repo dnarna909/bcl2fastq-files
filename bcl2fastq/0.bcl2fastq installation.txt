@@ -1,0 +1,56 @@
+# Download bcl2fastq rpm from Illumina and unzip
+
+cd ~/yard/apps/
+sudo apt install rpm2cpio
+rpm2cpio ./bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm | cpio -idmv
+
+pwd
+cd /home/jianie/yard/apps/usr/local/bin/
+export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
+bcl2fastq
+
+
+
+sudo apt-get install alien 
+cd ~/yard/apps/
+sudo alien bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm
+sudo dpkg -i bcl2fastq2_0v2.20.0.422-2_amd64.deb
+
+
+
+
+sudo apt install rpm
+sudo rpm -i /home/jianie/yard/apps/bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm
+
+
+
+
+# Compiling bcl2fastq v2.20 on Ubuntu 18.04 
+# works
+https://sarahpenir.github.io/linux/Installing-bcl2fastq/
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install zlibc
+sudo apt-get install libc6 ## installs librt and libpthread
+sudo apt-get install gcc
+sudo apt-get install g++
+
+
+sudo apt-get -y --purge remove libboost1.62-all-dev libboost1.62-dev ## the version I had at that time 
+sudo apt-get remove cmake 
+
+./configure && make && sudo make install
+
+
+
+sudo mkdir -p /home/jianie/yard/apps/include/sys
+sudo ln -s /home/jianie/yard/apps/include/x86_64-linux-gnu/sys/stat.h /home/jianie/yard/apps/include/sys/stat.h
+bcl2fastq
+
+which bcl2fastq
+
+/usr/local/bin/bcl2fastq
+
+export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
+

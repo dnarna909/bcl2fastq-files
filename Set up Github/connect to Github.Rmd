@@ -1,0 +1,34 @@
+
+```{t}
+# install devtools
+# from root
+sudo -s
+apt-get update -y
+
+# regular
+sudo apt-get update -y
+sudo apt-get install -y r-cran-devtools
+```
+
+
+```{r}
+## install if needed (do this exactly once):
+devtools::install_github("r-lib/usethis") 
+# or
+install.packages("usethis")
+```
+
+
+```{r}
+library(usethis)
+use_git_config(user.name = "dnarna909", user.email = "niejia113@gmail.com")
+```
+
+```{sh}
+# generate token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+git clone https://github.com/dnarna909/Ubuntu-computer-codes
+# push
+# commit
+```
+
+
