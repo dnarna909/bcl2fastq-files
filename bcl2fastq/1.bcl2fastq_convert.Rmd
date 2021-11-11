@@ -119,7 +119,6 @@ bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
 # 20210830
 codes from Zibiao Guo 
 ```{bash}
-<<<<<<< HEAD
 bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl/20210830_L3_SampleSheet_Dual.csv
 ```
 
@@ -132,14 +131,17 @@ bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_N
 # copy sample sheet to the same folder with runfolder
 # Because 'Read Number="3" NumCycles="24" IsIndexedRead="Y"/', we need to use '--use-bases-mask'
 # Use to clip extra bases off a read if you ran extra cycles for QC.
-bcl2fastq --use-bases-mask=Y26,I10,I10,Y98 --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl.csv
+cd /home/jianie/yard/run_bcl2fastq
+bcl2fastq --use-bases-mask Y151,I17,I10,Y151 --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl.csv
+
+bcl2fastq --use-bases-mask Y151,I17,I10,Y151 --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl.csv
 ```
-=======
+
 # copy sample sheet to the same folder with runfolder
+```{bash}
 bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl/20210830_L3_SampleSheet_Dual.csv
 ```
 
->>>>>>> eb79186c92a6f629e8bf12019b9760e3ffc4af31
 # 20211105_dual
 ```{bash}
 # copy sample sheet to the same folder with runfolder
