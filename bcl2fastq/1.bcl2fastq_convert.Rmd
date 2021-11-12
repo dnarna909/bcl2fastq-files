@@ -162,11 +162,7 @@ bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
   -r 6 -w 6 \
   -R /media/jianie/DATA/20211105_L3_L4 \
   --output-dir=/home/jianie/BCLI \
-<<<<<<< HEAD
   --interop-dir=/home/jianie/yard/run_bcl2fastq \
-=======
-  --interop-dir=/media/jianie/yard/run_bcl2fastq \
->>>>>>> 2f943b82abd04bd5b11f2eade13874c4c4a5fa46
-  --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_dual.csv
+  --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_dual.zibiao.csv
 ```
 
