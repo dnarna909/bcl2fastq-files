@@ -147,3 +147,22 @@ bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_N
 # copy sample sheet to the same folder with runfolder
 bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl/20210830_L3_SampleSheet_Dual.csv
 ```
+
+
+
+```{bash}
+bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
+  --create-fastq-for-index-reads \
+  --minimum-trimmed-read-length=8 \
+  --mask-short-adapter-reads=8 \
+  --ignore-missing-positions \
+  --ignore-missing-controls \
+  --ignore-missing-filter \
+  --ignore-missing-bcls \
+  -r 6 -w 6 \
+  -R /media/jianie/DATA/20211105_L3_L4 \
+  --output-dir=/home/jianie/BCLI \
+  --interop-dir=/media/jianie/yard/run_bcl2fastq \
+  --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_dual.csv
+```
+
