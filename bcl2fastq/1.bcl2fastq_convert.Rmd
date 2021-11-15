@@ -117,39 +117,9 @@ bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
 ```
 
 # 20210830
-codes from Zibiao Guo 
-```{bash}
-bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl/20210830_L3_SampleSheet_Dual.csv
-```
-
-```{bash}
-# copy sample sheet to the same folder with runfolder
-bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl.csv
-```
-
-```{bash}
-# copy sample sheet to the same folder with runfolder
-# Because 'Read Number="3" NumCycles="24" IsIndexedRead="Y"/', we need to use '--use-bases-mask'
-# Use to clip extra bases off a read if you ran extra cycles for QC.
-cd /home/jianie/yard/run_bcl2fastq
-bcl2fastq --use-bases-mask Y151,I17,I10,Y151 --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl.csv
-
-bcl2fastq --use-bases-mask Y151,I17,I10,Y151 --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl.csv
-```
-
-# copy sample sheet to the same folder with runfolder
-```{bash}
-bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl/20210830_L3_SampleSheet_Dual.csv
-```
-
-# 20211105_dual
-```{bash}
-# copy sample sheet to the same folder with runfolder
-bcl2fastq --runfolder-dir /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl --output-dir /home/jianie/BCLI --sample-sheet /media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl/20210830_L3_SampleSheet_Dual.csv
-```
 
 
-
+# 20211105_L3_dual
 ```{bash}
 bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
   --create-fastq-for-index-reads \
@@ -165,4 +135,68 @@ bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
   --interop-dir=/home/jianie/yard/run_bcl2fastq \
   --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_dual.zibiao.csv
 ```
+2021-11-12 16:59:16
+2021-11-12 17:36:44 
 
+# 20211105_L3_single
+```{bash}
+mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
+cd /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
+bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
+  --create-fastq-for-index-reads \
+  --minimum-trimmed-read-length=8 \
+  --mask-short-adapter-reads=8 \
+  --ignore-missing-positions \
+  --ignore-missing-controls \
+  --ignore-missing-filter \
+  --ignore-missing-bcls \
+  -r 6 -w 6 \
+  -R /media/jianie/DATA/20211105_L3_L4 \
+  --output-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single \
+  --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single \
+  --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_single.zibiao.csv
+```
+
+# 20211105_L3_L4_single
+```{bash}
+mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_single
+cd /home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_single
+export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
+bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
+  --create-fastq-for-index-reads \
+  --minimum-trimmed-read-length=8 \
+  --mask-short-adapter-reads=8 \
+  --ignore-missing-positions \
+  --ignore-missing-controls \
+  --ignore-missing-filter \
+  --ignore-missing-bcls \
+  -r 6 -w 6 \
+  -R /media/jianie/DATA/20211105_L3_L4 \
+  --output-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_single \
+  --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_single \
+  --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_bcl2fastq_single.csv
+```
+2021-11-15 08:42:37 
+2021-11-15 09:56:05 
+
+# 20211105_L3_L4_dual
+```{bash}
+mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_dual
+cd /home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_dual
+export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
+bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
+  --create-fastq-for-index-reads \
+  --minimum-trimmed-read-length=8 \
+  --mask-short-adapter-reads=8 \
+  --ignore-missing-positions \
+  --ignore-missing-controls \
+  --ignore-missing-filter \
+  --ignore-missing-bcls \
+  -r 6 -w 6 \
+  -R /media/jianie/DATA/20211105_L3_L4 \
+  --output-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_dual \
+  --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_dual \
+  --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_bcl2fastq_dual.csv
+```
+2021-11-15 10:47:46 
+2021-11-15 11:58:53 
