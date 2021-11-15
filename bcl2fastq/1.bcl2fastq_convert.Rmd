@@ -12,8 +12,8 @@ knitr::opts_chunk$set(echo = TRUE)
 # Setup the Command for bcl2fastq
 ## First make a directory in the yard to run the analysis.
 ```{bash}
-mkdir /home/jianie/yard/bcl2fastq_20210716
-cd /home/jianie/yard/bcl2fastq_20210716
+mkdir /home/jianie/yard/run_bcl2fastq
+cd /home/jianie/yard/run_bcl2fastq
 ``` 
 
 ## set up variables
@@ -22,77 +22,6 @@ export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
 bcl2fastq --help
 ```
 
-# Dual index: Masternak Samples  
-## First make a directory in the yard to run the analysis.
-```{bash}
-mkdir /home/jianie/yard/run_bcl2fastq
-cd /home/jianie/yard/run_bcl2fastq
-```
-
-```{bash}
-bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
---create-fastq-for-index-reads \
---minimum-trimmed-read-length=10 \
---mask-short-adapter-reads=10 \
---ignore-missing-positions \
---ignore-missing-controls \
---ignore-missing-filter \
---ignore-missing-bcls \
--r 4 -w 4 \
--R /media/jianie/Seagate_SequencingFiles_2/20210716_UTA_NovaSeq_L1_L2 \
---interop-dir=/media/jianie/yard/run_bcl2fastq \
---sample-sheet=/media/jianie/Seagate_SequencingFiles_2/20210716_L1_L2_cellranger/Nie1_SampleSheet_Dual.csv \
---tiles s_[1] \
---output-dir=/home/jianie/yard/run_bcl2fastq
-# start
-# 2021-09-17 16:12:53
-# 2021-09-17 18:06:01
-```
-
-# Single index: Lane2 samples and multi-plex samples
-## First make a directory in the yard to run the analysis.
-```{bash}
-mkdir /home/jianie/yard/run_bcl2fastq
-cd /home/jianie/yard/run_bcl2fastq
-```
-```{bash}
-bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
---create-fastq-for-index-reads \
---minimum-trimmed-read-length=10 \
---mask-short-adapter-reads=10 \
---ignore-missing-positions \
---ignore-missing-controls \
---ignore-missing-filter \
---ignore-missing-bcls \
--r 4 -w 4 \
--R /media/jianie/Seagate_SequencingFiles_2/20210716_UTA_NovaSeq_L1_L2 \
---interop-dir=/media/jianie/yard/run_bcl2fastq \
---sample-sheet=/media/jianie/Seagate_SequencingFiles_2/All_SampleSheet/bcl2fastq/20210716_Nie2_SampleSheet_Single.csv \
---output-dir=/home/jianie/yard/run_bcl2fastq
-# start
-# 2021-09-17 16:12:53
-# 2021-09-17 18:06:01
-```
-
-```{bash}
-mkdir /home/jianie/yard/run_bcl2fastq/20210716_L1_fastq_dual_bcl2fastq
-cd /home/jianie/yard/run_bcl2fastq/20210716_L1_fastq_dual_bcl2fastq
-```
-```{bash}
-bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
---create-fastq-for-index-reads \
---minimum-trimmed-read-length=8 \
---mask-short-adapter-reads=8 \
---ignore-missing-positions \
---ignore-missing-controls \
---ignore-missing-filter \
---ignore-missing-bcls \
--r 6 -w 6 \
--R /media/jianie/Seagate_SequencingFiles_2/20210716_UTA_NovaSeq_L1_L2 \
---sample-sheet=/media/jianie/Seagate_SequencingFiles_2/All_SampleSheet/bcl2fastq/SampleSheet_Dual_L1_bcl2fastq.csv \
---interop-dir=/media/jianie/yard/run_bcl2fastq \
---output-dir=/home/jianie/yard/run_bcl2fastq
-```
 
 # 20210716_L1_dual
 ```{bash}
@@ -134,6 +63,7 @@ bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
   --sample-sheet=/media/jianie/Seagate_SequencingFiles_2/20210716_UTA_NovaSeq_L1_L2_cbcl/20210716_L1_fastq_single.csv
 ```
 
+
 # 20210716_L2_single
 ```{bash}
 mkdir /home/jianie/yard/run_bcl2fastq/20210716_L2_fastq_single
@@ -153,6 +83,7 @@ bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
   --interop-dir=/home/jianie/yard/run_bcl2fastq/20210716_L2_fastq_single \
   --sample-sheet=/media/jianie/Seagate_SequencingFiles_2/20210716_UTA_NovaSeq_L1_L2_cbcl/20210716_L2_fastq_single.csv
 ```
+
 
 # 20210716_L1_L2_single
 ```{bash}
@@ -194,27 +125,12 @@ bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
   --sample-sheet=/media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl/20210830_L3_SampleSheet_Dual_zibiao.csv
 ```
 
-# 20211105_L3_single
-```{bash}
-mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
-cd /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
-bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
-  --create-fastq-for-index-reads \
-  --minimum-trimmed-read-length=8 \
-  --mask-short-adapter-reads=8 \
-  --ignore-missing-positions \
-  --ignore-missing-controls \
-  --ignore-missing-filter \
-  --ignore-missing-bcls \
-  -r 6 -w 6 \
-  -R /media/jianie/DATA/20211105_L3_L4 \
-  --output-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single \
-  --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single \
-  --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_single.zibiao.csv
-```
 
 # 20211105_L3_dual
 ```{bash}
+mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_dual
+cd /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_dual
+export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
 bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
   --create-fastq-for-index-reads \
   --minimum-trimmed-read-length=8 \
@@ -225,17 +141,19 @@ bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
   --ignore-missing-bcls \
   -r 6 -w 6 \
   -R /media/jianie/DATA/20211105_L3_L4 \
-  --output-dir=/home/jianie/BCLI \
-  --interop-dir=/home/jianie/yard/run_bcl2fastq \
+  --output-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_dual \
+  --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_dual \
   --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_dual.zibiao.csv
 ```
 2021-11-12 16:59:16
 2021-11-12 17:36:44 
 
+
 # 20211105_L3_single
 ```{bash}
 mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
 cd /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
+export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
 bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
   --create-fastq-for-index-reads \
   --minimum-trimmed-read-length=8 \
@@ -250,6 +168,7 @@ bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
   --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single \
   --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_single.zibiao.csv
 ```
+
 
 # 20211105_L3_L4_single
 ```{bash}
@@ -294,7 +213,7 @@ bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
   --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_bcl2fastq_dual.csv
 ```
 2021-11-15 13:14:44
-
+2021-11-15 17:01:12 
 
 
 
