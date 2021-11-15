@@ -119,6 +119,25 @@ bcl2fastq --use-bases-mask=Y151,I10,I10,Y151 \
 # 20210830
 
 
+# 20211105_L3_single
+```{bash}
+mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
+cd /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
+bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
+  --create-fastq-for-index-reads \
+  --minimum-trimmed-read-length=8 \
+  --mask-short-adapter-reads=8 \
+  --ignore-missing-positions \
+  --ignore-missing-controls \
+  --ignore-missing-filter \
+  --ignore-missing-bcls \
+  -r 6 -w 6 \
+  -R /media/jianie/DATA/20211105_L3_L4 \
+  --output-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single \
+  --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single \
+  --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_single.zibiao.csv
+```
+
 # 20211105_L3_dual
 ```{bash}
 bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
@@ -179,12 +198,8 @@ bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
 2021-11-15 08:42:37 
 2021-11-15 09:56:05 
 
-<<<<<<< HEAD
-# 20211105_L3_L4_dual
-=======
 
-# 20211105_L3_dual
->>>>>>> cbc9753d7517464cc8a07060be49ea9ab3bc4314
+# 20211105_L3_L4_dual
 ```{bash}
 mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_dual
 cd /home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_dual
@@ -203,29 +218,7 @@ bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
   --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_dual \
   --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_bcl2fastq_dual.csv
 ```
-<<<<<<< HEAD
 2021-11-15 10:47:46 
 2021-11-15 11:58:53 
-=======
-2021-11-12 16:59:16
-2021-11-12 17:36:44 
 
-# 20211105_L3_single
-```{bash}
-mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
-cd /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
-bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
-  --create-fastq-for-index-reads \
-  --minimum-trimmed-read-length=8 \
-  --mask-short-adapter-reads=8 \
-  --ignore-missing-positions \
-  --ignore-missing-controls \
-  --ignore-missing-filter \
-  --ignore-missing-bcls \
-  -r 6 -w 6 \
-  -R /media/jianie/DATA/20211105_L3_L4 \
-  --output-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single \
-  --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single \
-  --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_L3_bcl2fastq_single.zibiao.csv
-```
->>>>>>> cbc9753d7517464cc8a07060be49ea9ab3bc4314
+
