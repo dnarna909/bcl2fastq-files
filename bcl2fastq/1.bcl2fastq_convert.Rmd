@@ -48,7 +48,7 @@ bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
 mkdir /home/jianie/yard/run_bcl2fastq/20210716_L1_fastq_single
 cd /home/jianie/yard/run_bcl2fastq/20210716_L1_fastq_single
 export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
-bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
+bcl2fastq --use-bases-mask=Y28n*,I10n*,n*,Y90n* \
   --create-fastq-for-index-reads \
   --minimum-trimmed-read-length=8 \
   --mask-short-adapter-reads=8 \
@@ -69,7 +69,7 @@ bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
 mkdir /home/jianie/yard/run_bcl2fastq/20210716_L2_fastq_single
 cd /home/jianie/yard/run_bcl2fastq/20210716_L2_fastq_single
 export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
-bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
+bcl2fastq --use-bases-mask=Y28n*,I10n*,n*,Y90n* \
   --create-fastq-for-index-reads \
   --minimum-trimmed-read-length=8 \
   --mask-short-adapter-reads=8 \
@@ -90,7 +90,7 @@ bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
 mkdir /home/jianie/yard/run_bcl2fastq/20210716_L1_L2_fastq_single
 cd /home/jianie/yard/run_bcl2fastq/20210716_L1_L2_fastq_single
 export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
-bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
+bcl2fastq --use-bases-mask=Y28n*,I10n*,n*,Y90n* \
   --create-fastq-for-index-reads \
   --minimum-trimmed-read-length=8 \
   --mask-short-adapter-reads=8 \
@@ -154,7 +154,7 @@ bcl2fastq --use-bases-mask=Y28n*,I10,I10n*,Y90n* \
 mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
 cd /home/jianie/yard/run_bcl2fastq/20211105_L3_fastq_single
 export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
-bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
+bcl2fastq --use-bases-mask=Y28n*,I8n*,n*,Y90n* \
   --create-fastq-for-index-reads \
   --minimum-trimmed-read-length=8 \
   --mask-short-adapter-reads=8 \
@@ -170,12 +170,13 @@ bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
 ```
 
 
+
 # 20211105_L3_L4_single
 ```{bash}
 mkdir /home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_single
 cd /home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_single
 export PATH=/home/jianie/yard/apps/usr/local/bin/bcl2fastq:$PATH
-bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
+bcl2fastq --use-bases-mask=Y28n*,I8n*,n*,Y90n* \
   --create-fastq-for-index-reads \
   --minimum-trimmed-read-length=8 \
   --mask-short-adapter-reads=8 \
@@ -189,9 +190,8 @@ bcl2fastq --use-bases-mask=Y28n*,I8n*,I10n*,Y90n* \
   --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_single \
   --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_bcl2fastq_single.csv
 ```
-2021-11-15 08:42:37 
-2021-11-15 09:56:05 
-
+2021-11-15 17:22:40 
+2021-11-15 18:36:13 
 
 # 20211105_L3_L4_dual
 ```{bash}
