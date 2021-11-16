@@ -190,8 +190,8 @@ bcl2fastq --use-bases-mask=Y28n*,I8n*,n*,Y90n* \
   --interop-dir=/home/jianie/yard/run_bcl2fastq/20211105_L3_L4_fastq_single \
   --sample-sheet=/media/jianie/DATA/20211105_L3_L4/20211105_bcl2fastq_single.csv
 ```
-2021-11-15 17:22:40 
-2021-11-15 18:36:13 
+2021-11-16 11:25:39 
+2021-11-16 12:29:27 
 
 # 20211105_L3_L4_dual
 ```{bash}
