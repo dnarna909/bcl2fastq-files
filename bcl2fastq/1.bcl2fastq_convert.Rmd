@@ -124,7 +124,8 @@ bcl2fastq --use-bases-mask=Y28n*,I10n*,I10,Y90n* \
   --interop-dir=/home/jianie/yard/run_bcl2fastq/20210830_L3_fastq_dual \
   --sample-sheet=/media/jianie/Seagate_SequencingFiles_2/20210830_UTA_NovaSeq_L3_cbcl/20210830_L3_SampleSheet_Dual_zibiao.csv
 ```
-
+2021-11-19 22:23:01 
+2021-11-19 23:18:24 
 
 # 20211105_L3_dual
 ```{bash}
