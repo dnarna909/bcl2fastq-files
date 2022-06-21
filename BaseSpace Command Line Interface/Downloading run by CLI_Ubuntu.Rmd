@@ -64,5 +64,69 @@ mkdir /home/jianie/BCLI/20211105_L3_L4
 cd /home/jianie/BCLI/20211105_L3_L4
 bs download run -i 218524368 -o /home/jianie/BCLI/20211105_L3_L4 RunDownload
 ```
-#' 
-#' 
+
+bs list runs
++-------------------------------+-----------+-----------------------+--------+
+|             Name              |    Id     |    ExperimentName     | Status |
++-------------------------------+-----------+-----------------------+--------+
+| 220616_A00330_0108_BHMW35DSX3 | 237596411 | Nie1-3_Khan4_06162022 | Failed |
++-------------------------------+-----------+-----------------------+--------+
+
+```{bash}
+mkdir /home/jianie/BCLI/20220616_L1
+cd /home/jianie/BCLI/20220616_L1
+bs download run -i 237596411 -o /home/jianie/BCLI/20220616_L1 RunDownload
+```
+10:30 am - 
+
+bs list projects
++-------------------+-----------+--------------+
+|       Name        |    Id     |  TotalSize   |
++-------------------+-----------+--------------+
+| P08232021         | 292437155 | 449685938329 |
+| Nie_L2_P202220002 | 355038806 | 501577549396 |
+| Nie_L3_P202220003 | 355038807 | 495796741847 |
+| Nie_P20220004     | 355040048 | 464120750995 |
+| Nie_P20220005     | 355040049 | 498606194266 |
++-------------------+-----------+--------------+
+
+```{bash}
+mkdir /home/jianie/BCLI/20220620_L2
+cd /home/jianie/BCLI/20220620_L2
+bs download project -i 355038806 -o /home/jianie/BCLI/20220620_L2 ProjectDownload
+
+mkdir /home/jianie/BCLI/20220620_L3
+cd /home/jianie/BCLI/20220620_L3
+bs download project -i 355038807 -o /home/jianie/BCLI/20220620_L3 ProjectDownload
+
+mkdir /home/jianie/BCLI/20220620_L4
+cd /home/jianie/BCLI/20220620_L4
+bs download project -i 355040048 -o /home/jianie/BCLI/20220620_L4 ProjectDownload
+
+mkdir /home/jianie/BCLI/20220620_L5
+cd /home/jianie/BCLI/20220620_L5
+bs download project -i 355040049 -o /home/jianie/BCLI/20220620_L5 ProjectDownload
+```
+
+
+```{bash}
+cd /home/jianie/BCLI/20220620_L2
+bs download run -i 355038806 -o /home/jianie/BCLI/20220620_L2 ProjectDownload
+
+
+cd /home/jianie/BCLI/20220620_L3
+bs download run -i 355038807 -o /home/jianie/BCLI/20220620_L3 ProjectDownload
+
+
+cd /home/jianie/BCLI/20220620_L4
+bs download run -i 355040048 -o /home/jianie/BCLI/20220620_L4 ProjectDownload
+
+
+cd /home/jianie/BCLI/20220620_L5
+bs download run -i 355040049 -o /home/jianie/BCLI/20220620_L5 ProjectDownload
+```
+
+```{bash}
+
+```
+
